@@ -11,8 +11,8 @@ from django.utils.translation import ugettext_lazy as _
 from tastypie.models import create_api_key
 
 from xml.dom.minidom import *
-
-models.signals.post_save.connect(create_api_key, sender=User)
+from oppia.profile.models import CustomUser
+models.signals.post_save.connect(create_api_key, sender=CustomUser)
 
 
 class Course(models.Model):
@@ -565,7 +565,3 @@ class Points(models.Model):
         if score['total'] is None:
             return 0
         return score['total']
-    
-
-    
-    

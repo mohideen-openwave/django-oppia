@@ -1,5 +1,4 @@
 {% load i18n %}
-{% block content %}
 <div id="header"> 
     <div class="content">  
         <div id="logo"><h1><a href="{% url 'oppia_home' %}">{% trans 'app_name' %}</a></h1></div>
@@ -27,6 +26,7 @@
 	            <li><a href="{% url 'oppia_course' %}">{% trans 'menu_courses' %}</a></li>
 	            <li><a href="{% url 'oppia_upload' %}">{% trans 'menu_upload' %}</a></li>
             {% endif %}
+            <li><a href="http://220.226.2.31/nigerian/nigerian/" target="_blank">Tracker</a></li>
             </ul>
         </div>
         <div id="login">
@@ -39,15 +39,10 @@
         {% else %}
             {% url 'django.contrib.auth.views.login' as url_login %}
             {% url 'profile_register' as url_register %}
-            <p>{% blocktrans with request.path as rpath %}Welcome, please <a href="{{ url_login }}?next={{ rpath }}">Login</a>{% endblocktrans %}
-           	{% if OPPIA_ALLOW_SELF_REGISTRATION %}
-           		{% blocktrans %} or <a href="{{ url_register }}">Register</a>{% endblocktrans %}
-           	{% endif %}
-            </p>      
+            <p>{% blocktrans with request.path as rpath %}Welcome, please <a href="{{ url_login }}?next={{ rpath }}">Login</a> or <a href="{{ url_register }}">Register</a>{% endblocktrans %}</p>      
         {% endif %}
             
         </div>
     </div>
     <div style="clear:both;"></div>
 </div>
-{% endblock content %}
