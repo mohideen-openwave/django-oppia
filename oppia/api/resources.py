@@ -108,7 +108,7 @@ class RegisterResource(ModelResource):
         queryset = CustomUser.objects.all()
         resource_name = 'register'
         allowed_methods = ['post']
-        fields = ['username', 'first_name','last_name','email','phoneno','professional','town','city','state','country','worktype','currentlyworking','stafftype','familyplaning','nurhitraining','education','religion','sex','age','providedit','points']
+        fields = ['username', 'first_name','last_name','email','phoneno','current_working_city','currently_working_facility','current_place_employment','staff_type','nurhi_sponsor_training','highest_education_level','religion','sex','age','points']
         authorization = Authorization() 
         always_return_data = True 
         include_resource_uri = False
@@ -119,21 +119,15 @@ class RegisterResource(ModelResource):
                 'password_again': bundle.data['passwordagain'],
                 'email': bundle.data['email'],
                 'phoneno': bundle.data['phoneno'],
-                'professional': bundle.data['professional'],
-                'town': bundle.data['town'],
-                'city': bundle.data['city'],
-                'state': bundle.data['state'],
-                'country': bundle.data['country'],
-                'worktype': bundle.data['worktype'],
-                'currentlyworking': bundle.data['currentlyworking'],
-                'stafftype': bundle.data['stafftype'],
-                'familyplaning': bundle.data['familyplaning'],
-                'nurhitraining': bundle.data['nurhitraining'],
-                'education': bundle.data['education'],
+                'current_working_city': bundle.data['current_working_city'],
+                'currently_working_facility': bundle.data['currently_working_facility'],
+                'current_place_employment': bundle.data['current_place_employment'],
+                'staff_type': bundle.data['staff_type'],
+                'nurhi_sponsor_training': bundle.data['nurhi_sponsor_training'],
+                'highest_education_level': bundle.data['highest_education_level'],
                 'religion': bundle.data['religion'],
                 'sex': bundle.data['sex'],
-                'age': bundle.data['age'],
-                'providedit': bundle.data['providedit'],               
+                'age': bundle.data['age'],                          
                 'first_name': bundle.data['firstname'],
                 'last_name': bundle.data['lastname'],}
         rf = RegisterForm(data)
@@ -148,43 +142,31 @@ class RegisterResource(ModelResource):
             password = bundle.data['password']
             email = bundle.data['email']
             phoneno = bundle.data['phoneno']
-            professional = bundle.data['professional']
-            town = bundle.data['town']
-            city = bundle.data['city']
-            state = bundle.data['state']
-            country = bundle.data['country']
-            worktype = bundle.data['worktype']
-            currentlyworking = bundle.data['currentlyworking']
-            stafftype = bundle.data['stafftype']
-            familyplaning = bundle.data['familyplaning']
-            nurhitraining = bundle.data['nurhitraining']
-            education = bundle.data['education']
+            current_working_city = bundle.data['current_working_city']
+            currently_working_facility = bundle.data['currently_working_facility']
+            current_place_employment = bundle.data['current_place_employment']
+            staff_type = bundle.data['staff_type']            
+            nurhi_sponsor_training = bundle.data['nurhi_sponsor_training']
+            highest_education_level = bundle.data['highest_education_level']
             religion = bundle.data['religion']
             sex = bundle.data['sex']
-            age = bundle.data['age']
-            providedit = bundle.data['providedit']            
+            age = bundle.data['age']            
             first_name = bundle.data['firstname']
             last_name = bundle.data['lastname']
         try:
             bundle.obj = CustomUser.objects.create_user(username, email, password)
             bundle.obj.first_name = first_name
             bundle.obj.last_name = last_name
-            bundle.obj.phoneno = phoneno
-            bundle.obj.professional = professional
-            bundle.obj.town = town
-            bundle.obj.city = city
-            bundle.obj.state = state
-            bundle.obj.country = country
-            bundle.obj.worktype = worktype
-            bundle.obj.currentlyworking = currentlyworking
-            bundle.obj.stafftype = stafftype
-            bundle.obj.familyplaning = familyplaning
-            bundle.obj.nurhitraining = nurhitraining
-            bundle.obj.education = education
+            bundle.obj.phoneno = phoneno            
+            bundle.obj.current_working_city = current_working_city            
+            bundle.obj.currently_working_facility = currently_working_facility
+            bundle.obj.current_place_employment = current_place_employment
+            bundle.obj.staff_type = staff_type            
+            bundle.obj.nurhi_sponsor_training = nurhi_sponsor_training
+            bundle.obj.highest_education_level = highest_education_level
             bundle.obj.religion = religion
             bundle.obj.sex = sex
-            bundle.obj.age = age
-            bundle.obj.providedit = providedit            
+            bundle.obj.age = age         
             bundle.obj.save()
             u = authenticate(username=username, password=password)
             if u is not None:
@@ -199,22 +181,16 @@ class RegisterResource(ModelResource):
         del bundle.data['password']
         del bundle.data['firstname']
         del bundle.data['lastname']
-        del bundle.data['phoneno']
-        del bundle.data['professional']
-        del bundle.data['town']
-        del bundle.data['city']
-        del bundle.data['state']
-        del bundle.data['country']
-        del bundle.data['worktype']
-        del bundle.data['currentlyworking']
-        del bundle.data['stafftype']
-        del bundle.data['familyplaning']
-        del bundle.data['nurhitraining']
-        del bundle.data['education']
+        del bundle.data['phoneno']        
+        del bundle.data['current_working_city']        
+        del bundle.data['currently_working_facility']
+        del bundle.data['current_place_employment']
+        del bundle.data['staff_type']        
+        del bundle.data['nurhi_sponsor_training']
+        del bundle.data['highest_education_level']
         del bundle.data['religion']
         del bundle.data['sex']
-        del bundle.data['age']
-        del bundle.data['providedit']
+        del bundle.data['age']        
         return bundle   
  
     def dehydrate_points(self,bundle):

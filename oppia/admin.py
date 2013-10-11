@@ -1,8 +1,21 @@
 # oppia/admin.py
 from django.contrib import admin
+
 from oppia.models import Course,Section,Activity,Tracker,Media,Cohort
 from oppia.models import Participant,Message,Schedule,ActivitySchedule,Tag,CourseTag
 from oppia.models import Badge,Award,Points,AwardCourse,CourseDownload
+from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin
+from oppia.profile.models import CustomUser
+#Mohideen Added code by Openwave
+admin.site.unregister(User)
+
+class CustomUserInline(admin.StackedInline):
+    model = CustomUser
+
+class CustomUserAdmin(UserAdmin):
+    inlines = [ CustomUserInline, ]    
+#Custom Users profile for admin users 
 
 class TrackerAdmin(admin.ModelAdmin):
     list_display = ('user', 'submitted_date', 'agent', 'course','completed')
@@ -51,7 +64,8 @@ class SectionAdmin(admin.ModelAdmin):
   
 class TagAdmin(admin.ModelAdmin):
     list_display = ('name','created_date','created_by')
-                            
+
+admin.site.register(User, CustomUserAdmin)                            
 admin.site.register(Course,CourseAdmin)
 admin.site.register(Section,SectionAdmin)
 admin.site.register(Activity, ActivityAdmin)

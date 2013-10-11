@@ -321,8 +321,121 @@ class Tracker(models.Model):
         
         if 'lang' in json_data:
             return json_data['lang']
+    
+    def get_score(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
         
-         
+        if 'score' in json_data:
+            return json_data['score']
+        
+    def get_time(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'timetaken' in json_data:
+            return json_data['timetaken']
+
+    def get_instanceId(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'instance_id' in json_data:
+            return json_data['instance_id']
+
+    def get_quizId(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'quiz_id' in json_data:
+            return json_data['quiz_id']
+
+    def get_timeTaken(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'timetaken' in json_data:
+            return json_data['timetaken']
+
+    def get_mediaFile(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'mediafile' in json_data:
+            return json_data['mediafile']
+
+    def get_media(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'media' in json_data:
+            return json_data['media']
+
+    def get_simserialNo(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'simserialno' in json_data:
+            return json_data['simserialno']
+
+    def get_network(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'network' in json_data:
+            return json_data['network']
+
+
+    def get_deviceId(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'deviceid' in json_data:
+            return json_data['deviceid']
+
+    def get_batter(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'battery' in json_data:
+            return json_data['battery']
+
+    def get_location(self):
+        try:
+            json_data = json.loads(self.data)
+        except ValueError:
+            return None
+        
+        if 'location' in json_data:
+            return json_data['location']
+                
+        
+
+        
+        
+        
 class CourseDownload(models.Model):
     user = models.ForeignKey(User)
     course = models.ForeignKey(Course)

@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+{% load i18n %} 
+{% load display_functions %} 
+
+{% block content %}
+
+<h2>{% trans 'Trackers' %}</h2>
+{% if tracker_list %}	
+	<div class="tableheader">
+		<div class='tabletitle'>User - IP Address</div>
+		<div class='tabletitle'>Date Submitted</div>			
+		<div class='tablecell'>Information</div>	
+				
+		<div style='clear:both'></div>
+	</div>
+	{% for tracker in tracker_list %}
+		<div class="tablelist"> 	
+			<div class='tabletitle'>
+				{{ tracker.user}} - {{ tracker.ip}}</div>
+			<div class='tabletitle'>{{tracker.submitted_date}} </div>			
+			<div>
+				<div class='tableInfo' style="float: right;margin: 5px;text-align: left;width: 286px;">
+					Language: {{tracker.get_lang}} <br/>				
+				Score: {{tracker.get_score}} <br/>
+				Instance ID: {{tracker.get_instanceId}} <br/>
+				Quiz ID: {{tracker.get_quizId}} <br/>
+				Time: {{tracker.get_time}} <br/>
+				TimeTake: {{tracker.get_timeTake}} <br/>
+				Media File: {{tracker.get_mediaFile}} <br/>
+				Media: {{tracker.get_media}} <br/>
+				Sim Serial#: {{tracker.get_simserialNo}} <br/>
+				Network: {{tracker.get_network}} <br/>
+				Device ID: {{tracker.get_deviceId}} <br/>
+				Battery: {{tracker.get_battery}} <br/>
+				Location: {{tracker.get_location}} <br/>				
+				Agent: {{tracker.agent}}
+				</div>
+			</div>		
+			<div style='clear:both'></div>
+		</div>
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

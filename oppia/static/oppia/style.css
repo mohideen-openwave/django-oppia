@@ -15,7 +15,7 @@ li {
 #header {
     padding:0 0 10px 0;
     color: #fff;
-    background: #77a240;
+    background: #6AB0DC;
 }
 #header a {
     color: #fff;
@@ -47,7 +47,7 @@ li {
     -webkit-border-top-left-radius: 0.5em;
 }
 #menu ul li:hover {
-    background:#495525;
+    background:#0B2E44;
     cursor:pointer;
 }
 
@@ -61,13 +61,13 @@ li {
 
 #main {
     padding:10px 0 0 0;
-    min-height:300px;
+    min-height:653px;
     background:#eee;
 }
 
 #footer {
     padding:10px 0 10px 70%;
-    background: #77a240;
+    background: #6AB0DC;
     color: #fff;
 }
 
@@ -110,7 +110,7 @@ h3.formsection {
 	margin: 20px 0 0 0;
 }
 a {
-    color:#495525;
+    color:#0B2E44;
 }
 
 p {
@@ -193,7 +193,7 @@ span.points, span.badges {
 	font-family: courier;
 	font-weight:bold;
 	color: #fff;
-	background:#495525;
+	background:#0B2E44;
 	white-space: nowrap;
 	text-align:right;
 	display:inline;
@@ -293,4 +293,8 @@ div.tabletitle{
 	width:35%;
 }
 
-
+/*Added by Openwave - Mohideen*/
+div.tableInfo{
+	float:left;
+	width:30%;	
+}

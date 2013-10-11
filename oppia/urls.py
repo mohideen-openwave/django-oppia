@@ -34,6 +34,8 @@ urlpatterns = patterns('',
     url(r'^leaderboard/$', 'oppia.views.leaderboard_view', name="oppia_leaderboard"),
     url(r'^upload/$', 'oppia.views.upload', name="oppia_upload"),
     url(r'^upload/success/$', TemplateView.as_view(template_name="oppia/upload-success.html"), name="oppia_upload_success"),
+    #Add by OWC - Mohideen Abdul Khadir
+    url(r'^tracker/$', 'oppia.views.tracker_view', name="oppia_tracker"),
     url(r'^course/$', 'oppia.views.course_view', name="oppia_course"),
     url(r'^course/(?P<id>\d+)/$', 'oppia.views.recent_activity', name="oppia_recent_activity"),
     url(r'^course/(?P<id>\d+)/detail/$', 'oppia.views.recent_activity_detail', name="oppia_recent_activity_detail"),

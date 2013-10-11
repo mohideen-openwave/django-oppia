@@ -42,60 +42,46 @@
         <div class="fieldInputWrapper">{{ form.phoneno }}</div>
     </div>
     <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.professional.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_professional">professional</label></div>
-        <div class="fieldInputWrapper">{{ form.professional }}</div>
+        <div class="fieldErrorWrapper">{{ form.current_working_city.errors }}</div>
+        <div class="fieldLabelWrapper"><label for="id_current_working_city">Current Working City</label></div>
+        <div class="fieldInputWrapper">{{ form.current_working_city }}</div>
     </div>
     <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.town.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_town">Town</label></div>
-        <div class="fieldInputWrapper">{{ form.town }}</div>
+        <div class="fieldErrorWrapper">{{ form.currently_working_facility.errors }}</div>
+        <div class="fieldLabelWrapper"><label for="id_currently_working_facility">Currently Working Facility</label></div>
+        <div class="fieldInputWrapper">{{ form.currently_working_facility }}</div>
     </div>
     <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.city.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_city">city</label></div>
-        <div class="fieldInputWrapper">{{ form.city }}</div>
+        <div class="fieldErrorWrapper">{{ form.current_place_employment.errors }}</div>
+        <div class="fieldLabelWrapper"><label for="id_current_place_employment">Current Place Employment</label></div>
+        <div class="fieldInputWrapper">{{ form.current_place_employment }}</div>
     </div>
     <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.state.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_state">state</label></div>
-        <div class="fieldInputWrapper">{{ form.state }}</div>
+        <div class="fieldErrorWrapper">{{ form.highest_education_level.errors }}</div>
+        <div class="fieldLabelWrapper"><label for="id_highest_education_level">Highest Education Level</label></div>
+        <div class="fieldInputWrapper">{{ form.highest_education_level }}</div>
     </div>
     <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.country.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_country">Country</label></div>
-        <div class="fieldInputWrapper">{{ form.country }}</div>
+        <div class="fieldErrorWrapper">{{ form.staff_type.errors }}</div>
+        <div class="fieldLabelWrapper"><label for="id_staff_type">Staff Type</label></div>
+        <div class="fieldInputWrapper">{{ form.staff_type }}</div>
     </div>
     <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.worktype.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_worktype">Work Type</label></div>
-        <div class="fieldInputWrapper">{{ form.worktype }}</div>
+        <div class="fieldErrorWrapper">{{ form.nurhi_sponsor_training.errors }}</div>
+        <div class="fieldLabelWrapper"><label for="id_nurhi_sponsor_training">Nurhi Sponsor Training Type</label></div>
+        <div class="fieldInputWrapper">{{ form.nurhi_sponsor_training }}</div>
     </div>
     <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.currentlyworking.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_currentlyworking">Currently Working</label></div>
-        <div class="fieldInputWrapper">{{ form.currentlyworking }}</div>
+        <div class="fieldErrorWrapper">{{ form.current_place_employment.errors }}</div>
+        <div class="fieldLabelWrapper"><label for="id_current_place_employment">Current Place Employment</label></div>
+        <div class="fieldInputWrapper">{{ form.current_place_employment }}</div>
     </div>
     <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.stafftype.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_stafftype">Staff Type</label></div>
-        <div class="fieldInputWrapper">{{ form.stafftype }}</div>
+        <div class="fieldErrorWrapper">{{ form.highest_education_level.errors }}</div>
+        <div class="fieldLabelWrapper"><label for="id_highest_education_level">Highest Education Level</label></div>
+        <div class="fieldInputWrapper">{{ form.highest_education_level }}</div>
     </div>
-    <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.familyplaning.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_familyplaning">Family Planing</label></div>
-        <div class="fieldInputWrapper">{{ form.familyplaning }}</div>
-    </div>
-    <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.nurhitraining.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_nurhitraining">NURHI-Training</label></div>
-        <div class="fieldInputWrapper">{{ form.nurhitraining }}</div>
-    </div>
-    <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.education.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_education">Education</label></div>
-        <div class="fieldInputWrapper">{{ form.education }}</div>
-    </div>
+    
     <div class="fieldWrapper">
         <div class="fieldErrorWrapper">{{ form.religion.errors }}</div>
         <div class="fieldLabelWrapper"><label for="id_religion">Religion</label></div>
@@ -111,11 +97,7 @@
         <div class="fieldLabelWrapper"><label for="id_age">Age</label></div>
         <div class="fieldInputWrapper">{{ form.age }}</div>
     </div>  
-    <div class="fieldWrapper">
-        <div class="fieldErrorWrapper">{{ form.providedit.errors }}</div>
-        <div class="fieldLabelWrapper"><label for="id_providedit">If you have recieved trainning who provide it?</label></div>
-        <div class="fieldInputWrapper">{{ form.providedit }}</div>
-    </div>   
+      
 	<h3 class="formsection">{% trans 'form_section_change_password' %}</h3>
     <div class="fieldWrapper">
         <div class="fieldErrorWrapper">{{ form.password.errors }}</div>

@@ -1,7 +1,7 @@
 {% load i18n %}
 <div id="header"> 
     <div class="content">  
-        <div id="logo"><h1><a href="{% url 'oppia_home' %}">{% trans 'app_name' %}</a></h1></div>
+        <div id="logo"><h1><a href="{% url 'oppia_home' %}">{% trans 'NURHI-Training' %}</a></h1></div>
         <div id="lang">
             <form action="{% url 'profile_set_language' %}" method="post">
                 {% csrf_token %}
@@ -25,8 +25,9 @@
             {% if user.is_authenticated %}
 	            <li><a href="{% url 'oppia_course' %}">{% trans 'menu_courses' %}</a></li>
 	            <li><a href="{% url 'oppia_upload' %}">{% trans 'menu_upload' %}</a></li>
+	            <li><a href="{% url 'oppia_tracker' %}">{% trans 'Tracker' %}</a></li>
             {% endif %}
-            <li><a href="http://220.226.2.31/nigerian/nigerian/" target="_blank">Tracker</a></li>
+            
             </ul>
         </div>
         <div id="login">

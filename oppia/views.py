@@ -19,7 +19,7 @@ from oppia.forms import ActivityScheduleForm, CohortForm
 from oppia.models import Course, Tracker, Tag, CourseTag, Schedule
 from oppia.models import ActivitySchedule, Activity, Cohort, Participant, Points
 from oppia.quiz.models import Quiz, QuizAttempt, QuizAttemptResponse
-
+from oppia.profile.models import CustomUser
 from uploader import handle_uploaded_file
 
 
@@ -42,6 +42,10 @@ def course_view(request):
     course_list = Course.objects.all().order_by('title')    
     return render_to_response('oppia/course/course.html',{'course_list': course_list,}, context_instance=RequestContext(request))
 
+#Add code by Openwave :: Mohideen Abdul Khadir AH
+def tracker_view(request):
+    tracker_list = Tracker.objects.all().order_by('user')    
+    return render_to_response('oppia/tracker/tracker.html',{'tracker_list': tracker_list,}, context_instance=RequestContext(request))
        
 def terms_view(request):
         return render_to_response('oppia/terms.html', 

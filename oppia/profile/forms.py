@@ -23,66 +23,43 @@ class RegisterForm(forms.Form):
                                     required=True)
     # added new fields as per the client requirement    
     # Company Openwave Computing services
+    current_working_city = forms.CharField(max_length=100,
+                                error_messages={'required': _(u'Please enter your current working city.'),
+                                                'min_length': _(u'Your current working city should be at least 2 characters long.')},
+                                min_length=2,
+                                required=True)
+    currently_working_facility = forms.CharField(max_length=100,
+                                error_messages={'required': _(u'Please enter your current working facility.'),
+                                                'min_length': _(u'Your current working facility should be at least 2 characters long.')},
+                                min_length=2,
+                                required=True)
+    staff_type = forms.CharField(max_length=100,
+                                error_messages={'required': _(u'Please enter staff type.'),
+                                                'min_length': _(u'Your staff type should be at least 2 characters long.')},
+                                min_length=2,
+                                required=True)
+    nurhi_sponsor_training = forms.CharField(max_length=100,
+                                error_messages={'required': _(u'Please enter Nurhi sponsor training.'),
+                                                'min_length': _(u'Your Nurhi sponsor training should be at least 2 characters long.')},
+                                min_length=1,
+                                required=True)
+    current_place_employment = forms.CharField(max_length=100,
+                                error_messages={'required': _(u'Please enter your current employment place.'),
+                                                'min_length': _(u'Your current employment place should be at least 2 characters long.')},
+                                min_length=2,
+                                required=True)
+    highest_education_level = forms.CharField(max_length=100,
+                                error_messages={'required': _(u'Please enter your highest education level.'),
+                                                'min_length': _(u'Your highest education level should be at least 2 characters long.')},
+                                min_length=1,
+                                required=True)
+             
     phoneno = forms.CharField(max_length=100,
                                 error_messages={'required': _(u'Please enter your contact number.'),
                                                 'min_length': _(u'Your contact number should be at least 2 characters long.')},
                                 min_length=2,
                                 required=True)   
-    professional = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your professional details.'),
-                                                'min_length': _(u'Your professional details should be at least 2 characters long.')},
-                                min_length=2,
-                                required=True)
-    town = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your town name.'),
-                                                'min_length': _(u'Your town name should be at least 2 characters long.')},
-                                min_length=2,
-                                required=True)
-    city = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your city name.'),
-                                                'min_length': _(u'Your city name should be at least 2 characters long.')},
-                                min_length=2,
-                                required=True)
-    state = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your state name.'),
-                                                'min_length': _(u'Your state name should be at least 2 characters long.')},
-                                min_length=2,
-                                required=True)
-    country = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your country name.'),
-                                                'min_length': _(u'Your country name should be at least 2 characters long.')},
-                                min_length=2,
-                                required=True)
-    worktype = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your work type.'),
-                                                'min_length': _(u'Your work type should be at least 2 characters long.')},
-                                min_length=1,
-                                required=True)
-    currentlyworking = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your currently working.'),
-                                                'min_length': _(u'Your currently working should be at least 2 characters long.')},
-                                min_length=1,
-                                required=True)
-    stafftype = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your staff type.'),
-                                                'min_length': _(u'Your staff type should be at least 2 characters long.')},
-                                min_length=1,
-                                required=True)
-    familyplaning = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your family planing.'),
-                                                'min_length': _(u'Your family planing should be at least 2 characters long.')},
-                                min_length=1,
-                                required=True)
-    nurhitraining = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your Nurhi Training.'),
-                                                'min_length': _(u'Your nurhi training should be at least 2 characters long.')},
-                                min_length=1,
-                                required=True)
-    education = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your education.'),
-                                                'min_length': _(u'Your education should be at least 2 characters long.')},
-                                min_length=1,
-                                required=True)
+   
     religion = forms.CharField(max_length=100,
                                 error_messages={'required': _(u'Please enter your religion.'),
                                                 'min_length': _(u'Your religion name should be at least 2 characters long.')},
@@ -98,11 +75,7 @@ class RegisterForm(forms.Form):
                                                 'min_length': _(u'Your age should be at least 1 characters long.')},
                                 min_length=1,
                                 required=True)
-    providedit = forms.CharField(max_length=100,
-                                error_messages={'required': _(u'Please enter your provoided It.'),
-                                                'min_length': _(u'Your Training provided it should be at least 2 characters long.')},
-                                min_length=1,
-                                required=True)     
+     
     first_name = forms.CharField(max_length=100,
                                     error_messages={'required': _(u'Please enter your first name.'),
                                                     'min_length': _(u'Your first name should be at least 2 characters long.')},
@@ -164,36 +137,24 @@ class ProfileForm(forms.Form):
                                      min_length=6)
     phoneno = forms.CharField(widget = forms.TextInput(),
                                required=False)
-    professional = forms.CharField(widget = forms.TextInput(),
+    current_working_city = forms.CharField(widget = forms.TextInput(),
                                required=False)
-    town = forms.CharField(widget = forms.TextInput(),
+    currently_working_facility = forms.CharField(widget = forms.TextInput(),
                                required=False)
-    city = forms.CharField(widget = forms.TextInput(),
+    staff_type = forms.CharField(widget = forms.TextInput(),
                                required=False)
-    state = forms.CharField(widget = forms.TextInput(),
+    nurhi_sponsor_training = forms.CharField(widget = forms.TextInput(),
                                required=False)
-    country = forms.CharField(widget = forms.TextInput(),
+    current_place_employment = forms.CharField(widget = forms.TextInput(),
                                required=False)
-    worktype = forms.CharField(widget = forms.TextInput(),
-                               required=False)
-    currentlyworking = forms.CharField(widget = forms.TextInput(),
-                               required=False)
-    stafftype = forms.CharField(widget = forms.TextInput(),
-                               required=False)
-    familyplaning = forms.CharField(widget = forms.TextInput(),
-                               required=False)
-    nurhitraining = forms.CharField(widget = forms.TextInput(),
-                               required=False)
-    education = forms.CharField(widget = forms.TextInput(),
-                               required=False)
+    highest_education_level = forms.CharField(widget = forms.TextInput(),
+                               required=False)    
     religion = forms.CharField(widget = forms.TextInput(),
                                required=False)
     sex = forms.CharField(widget = forms.TextInput(),
                                required=False)
     age = forms.CharField(widget = forms.TextInput(),
-                               required=False)  
-    providedit = forms.CharField(widget = forms.TextInput(),
-                               required=False)   
+                               required=False)
     first_name = forms.CharField(max_length=100,
                                  min_length=2,
                                  required=True)
